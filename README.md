@@ -65,6 +65,7 @@
 
 본 연구에서는 다양한 딥러닝 모델(RNN, CNN, ResNet, VGG 등)을 비교 분석했으며,  
 CNN 계열의 모델에서 가장 우수한 성능을 보였고, **SEBlock**과 **Class Weight 조정**을 통해 불균형 문제를 효과적으로 해결했습니다.
+
 <img src="https://github.com/user-attachments/assets/0d5c46f2-7d53-4ff8-be5a-d353e66e038e" width="350"/>
 ### 📊 모델 비교 결과
 - CNN 모델이 전반적인 Accuracy 및 Recall에서 가장 우수
