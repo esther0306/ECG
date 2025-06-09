@@ -26,10 +26,12 @@
 - **성비**: 52% 남성 / 48% 여성  
 - **연령 분포**: 0 ~ 95세 (중간값 62, 분위수 범위 22)
 
-![image](https://github.com/user-attachments/assets/78647f3b-bd48-4086-9172-0943c5192670)
+<img src="https://github.com/user-attachments/assets/78647f3b-bd48-4086-9172-0943c5192670" width="400"/>
+
 ## 🏷️ 클래스 구성
 
-![Uploading image.png…]()
+![image](https://github.com/user-attachments/assets/654f8a8d-50ec-41eb-bab8-ea307f042f19)
+
 
 | 클래스 | 설명 | 샘플 수 |
 |--------|------|----------|
@@ -39,3 +41,24 @@
 
 - 본 연구에서는 **NORM vs HYP (정상 vs 비대증)** 이진 분류로 설정  
 - 클래스 분포는 약 **4:1**로 **심한 클래스 불균형 존재**
+
+## ⚙️ 데이터 구성 및 처리
+
+- 레이블: `HYP → 0`, `NORM → 1`로 변환
+- 데이터 분할 비율: `train:val:test = 7:2:1`
+- 의료 데이터 특성상 **데이터 증강은 적용하지 않음**
+
+---
+
+## 🧠 불균형 문제 해결 전략
+
+| 기법 | 설명 |
+|------|------|
+| `Class Weighting` | 손실 함수에 클래스 비율 기반 가중치 부여 |
+| `Focal Loss` | Hard example에 더 집중 |
+| `Weighted Random Sampling` | 학습 시 소수 클래스 샘플 우선 선택 |
+| `Cost-sensitive Learning` | FP/FN 비용 차이를 고려한 손실 함수 |
+| `Under Sampling` | 다수 클래스 일부 제거하여 균형 조정 |
+
+
+
