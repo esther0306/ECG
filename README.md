@@ -67,6 +67,51 @@
 CNN 계열의 모델에서 가장 우수한 성능을 보였고, **SEBlock**과 **Class Weight 조정**을 통해 불균형 문제를 효과적으로 해결했습니다.
 
 <img src="https://github.com/user-attachments/assets/0d5c46f2-7d53-4ff8-be5a-d353e66e038e" width="350"/>
+## 🧱 모델 아키텍처: CNN2D
+
+본 연구에서 최종적으로 채택된 CNN2D 구조는 다음과 같습니다:
+
+```python
+import torch.nn as nn
+
+class CNN2D(nn.Module):
+    def __init__(self, num_classes):
+        super(CNN2D, self).__init__()
+
+        self.conv1 = nn.Conv2d(in_channels=1, out_channels=100, kernel_size=(10, 10))
+        self.conv2 = nn.Conv2d(in_channels=100, out_channels=250, kernel_size=(10, 10))
+        self.conv3 = nn.Conv2d(in_channels=250, out_channels=500, kernel_size=(10, 10))
+        self.conv4 = nn.Conv2d(in_channels=500, out_channels=1000, kernel_size=(10, 10))
+
+        self.relu = nn.ReLU()
+        self.bn1 = nn.BatchNorm2d(100)
+        self.bn2 = nn.BatchNorm2d(250)
+        self.bn3 = nn.BatchNorm2d(500)
+        self.bn4 = nn.BatchNorm2d(1000)
+
+        self.pool = nn.MaxPool2d(kernel_size=(2, 2))
+        self.global_avg_pool = nn.AdaptiveAvgPool2d((1, 1))
+        self.dropout1 = nn.Dropout(0.5)
+        self.fc = nn.Linear(1000, num_classes)
+        self.sigmoid = nn.Sigmoid()
+
+    def forward(self, x):
+        x = self.pool(self.relu(self.bn1(self.conv1(x))))
+        x = self.dropout1(x)
+
+        x = self.pool(self.relu(self.bn2(self.conv2(x))))
+        x = self.dropout1(x)
+
+        x = self.pool(self.relu(self.bn3(self.conv3(x))))
+        x = self.dropout1(x)
+
+        x = self.pool(self.relu(self.bn4(self.conv4(x))))
+        x = self.global_avg_pool(x)
+        x = x.view(x.size(0), -1)  # Flatten
+        x = self.dropout1(x)
+        x = self.fc(x)
+        x = self.sigmoid(x)
+        return x
 
 ### 📊 모델 비교 결과
 - CNN 모델이 전반적인 Accuracy 및 Recall에서 가장 우수
