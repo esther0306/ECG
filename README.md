@@ -87,8 +87,7 @@ CNN 계열의 모델에서 가장 우수한 성능을 보였고, **SEBlock**과 
   - Loss: 0.1602
   - Recall: 0.8461 / 0.9701
   - **F1-Score: 0.8618 / 0.9666**
-![image](https://github.com/user-attachments/assets/be026a83-f4a7-4d6e-b610-5e3cb25ed903)
-
+<img src="https://github.com/user-attachments/assets/be026a83-f4a7-4d6e-b610-5e3cb25ed903" width="350"/>
 ---
 
 ## 🧾 결론 및 기대 효과
