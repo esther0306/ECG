@@ -40,6 +40,8 @@
 
 - 본 연구에서는 **NORM vs HYP (정상 vs 비대증)** 이진 분류로 설정  
 - 클래스 분포는 약 **4:1**로 **심한 클래스 불균형 존재**
+![image](https://github.com/user-attachments/assets/98680b26-6792-4a40-9806-77bdd5e22da3)
+![image](https://github.com/user-attachments/assets/53854bb5-9672-47da-909d-84d08084918a)
 
 ## ⚙️ 데이터 구성 및 처리
 
