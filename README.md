@@ -67,6 +67,7 @@
 CNN 계열의 모델에서 가장 우수한 성능을 보였고, **SEBlock**과 **Class Weight 조정**을 통해 불균형 문제를 효과적으로 해결했습니다.
 
 <img src="https://github.com/user-attachments/assets/0d5c46f2-7d53-4ff8-be5a-d353e66e038e" width="350"/>
+
 ## 🧱 모델 아키텍처: CNN2D
 
 본 연구에서 최종적으로 채택된 CNN2D 구조는 다음과 같습니다:
