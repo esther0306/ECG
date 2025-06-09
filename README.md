@@ -26,7 +26,7 @@
 - **성비**: 52% 남성 / 48% 여성  
 - **연령 분포**: 0 ~ 95세 (중간값 62, 분위수 범위 22)
 
-<img src="https://github.com/user-attachments/assets/78647f3b-bd48-4086-9172-0943c5192670" width="400"/>
+<img src="https://github.com/user-attachments/assets/78647f3b-bd48-4086-9172-0943c5192670" width="200"/>
 
 ## 🏷️ 클래스 구성
 
