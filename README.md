@@ -113,6 +113,7 @@ class CNN2D(nn.Module):
         x = self.sigmoid(x)
         return x
 
+
 ### 📊 모델 비교 결과
 - CNN 모델이 전반적인 Accuracy 및 Recall에서 가장 우수
 - 특히 HCM 클래스(소수 클래스)의 Recall을 효과적으로 향상시킴
