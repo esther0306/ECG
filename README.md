@@ -112,7 +112,7 @@ class CNN2D(nn.Module):
         x = self.fc(x)
         x = self.sigmoid(x)
         return x
-
+```python
 
 ### 📊 모델 비교 결과
 - CNN 모델이 전반적인 Accuracy 및 Recall에서 가장 우수
